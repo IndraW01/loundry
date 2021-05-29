@@ -54,7 +54,7 @@ $transaksiLoundry = lihat("SELECT * FROM tb_transaksi
             <td align="center">
               <?php if ($transaksi['status'] == 'Lunas') : ?>
                 <a onclick="return confirm('Yakin ingin menghapus Data');" href="?page=transaksiLaundry&aksi=hapus&id=<?= $transaksi['id_transaksi']; ?>" class="btn btn-danger">Hapus</a>
-                <a href="#" class="btn btn-success">Cetak</a>
+                <a href="cetak.php?id=<?= $transaksi['id_transaksi']; ?>" target="_blank" class="btn btn-success">Cetak</a>
               <?php else : ?>
                 <a href="#" class="btn btn-danger disabled">Hapus</a>
                 <a href="#" class="btn btn-success disabled">Cetak</a>

@@ -68,7 +68,7 @@ function gambar()
   // cek apakah ada gambar yang dipilih
   if ($error == 4) {
     echo "<script>
-             alert('Gambar blm dipiih');
+             alert('Gambar belum dipiih');
            </script>";
     return false;
   }

@@ -27,17 +27,23 @@ $riwayatLoundry = lihat("SELECT * FROM tb_transaksi
         </tr>
       </thead>
       <tbody>
-        <?php $no = 1; ?>
-        <?php foreach ($riwayatLoundry as $riwayat) : ?>
+        <?php if (count($riwayatLoundry) == 0) : ?>
           <tr>
-            <th scope="row"><?= $no++; ?></th>
-            <td><?= $riwayat['tanggal_selesai']; ?></td>
-            <td><?= $riwayat['nama_paket']; ?></td>
-            <td><?= $riwayat['jumlah_kiloan']; ?></td>
-            <td><?= $riwayat['nominal']; ?></td>
-            <td><?= $riwayat['catatan']; ?></td>
+            <td colspan="6" align="center">Riwayat Kosong</td>
           </tr>
-        <?php endforeach; ?>
+        <?php else : ?>
+          <?php $no = 1; ?>
+          <?php foreach ($riwayatLoundry as $riwayat) : ?>
+            <tr>
+              <th scope="row"><?= $no++; ?></th>
+              <td><?= $riwayat['tanggal_selesai']; ?></td>
+              <td><?= $riwayat['nama_paket']; ?></td>
+              <td><?= $riwayat['jumlah_kiloan']; ?></td>
+              <td><?= $riwayat['nominal']; ?></td>
+              <td><?= $riwayat['catatan']; ?></td>
+            </tr>
+          <?php endforeach; ?>
+        <?php endif; ?>
       </tbody>
     </table>
   </div>

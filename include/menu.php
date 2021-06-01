@@ -97,12 +97,6 @@
           <p>Transaksi Laundry</p>
         </a>
       </li>
-      <li class="nav-item">
-        <a href="?page=keluar" class="nav-link">
-          <i class="nav-icon fas fa-money-check-alt"></i>
-          <p>Transaksi Pengeluaran</p>
-        </a>
-      </li>
     <?php endif; ?>
 
   </ul>

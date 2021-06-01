@@ -1,3 +1,19 @@
+<?php
+
+include "page/transaksiLoundry/prosesTransaksiLoundry.php";
+
+$paketLaundry = lihat("SELECT * FROM tb_paket");
+$pengguna = lihat("SELECT * FROM tb_user WHERE role != 'Pelanggan'");
+$pelanggan = lihat("SELECT * FROM tb_user WHERE role = 'Pelanggan'");
+$transaksi = lihat("SELECT * FROM tb_transaksi");
+
+$dataPaketLaundry = count($paketLaundry);
+$dataPengguna = count($pengguna);
+$dataPelanggan = count($pelanggan);
+$dataTransaksi = count($transaksi);
+
+?>
+
 <div class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
@@ -17,51 +33,53 @@
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>150</h3>
+            <h3><?= $dataPaketLaundry; ?></h3>
 
-            <p>New Orders</p>
+            <p>Menu Paket</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="?page=paketLoundry" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
-      <div class="col-lg-3 col-6">
-        <!-- small box -->
-        <div class="small-box bg-success">
-          <div class="inner">
-            <h3>53<sup style="font-size: 20px">%</sup></h3>
+      <?php if ($_SESSION['Admin']) : ?>
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-success">
+            <div class="inner">
+              <h3><?= $dataPengguna; ?></h3>
 
-            <p>Bounce Rate</p>
+              <p>Data Pengguna</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="?page=pengguna" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
-          <div class="icon">
-            <i class="ion ion-stats-bars"></i>
-          </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
-      </div>
+      <?php endif; ?>
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
         <div class="small-box bg-warning">
           <div class="inner">
-            <h3>44</h3>
+            <h3 class="text-white"><?= $dataPelanggan; ?></h3>
 
-            <p>User Registrations</p>
+            <p class="text-white">Data Pelanggan</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="?page=pelanggan" class="small-box-footer text-white" style="color: white !important;">More info <i class="fas fa-arrow-circle-right text-white"></i></a>
         </div>
       </div>
       <div class="col-lg-3 col-6">
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>65</h3>
-            <p>Unique Visitors</p>
+            <h3><?= $dataTransaksi; ?></h3>
+            <p>Data Transaksi</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>

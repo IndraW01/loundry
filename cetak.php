@@ -40,6 +40,7 @@ foreach ($cetak as $ctk) :
         <p>Paket Laundry : ' . $ctk['nama_paket'] . '</p>
         <p>Harga Paket/KG : ' . $ctk['harga_paket'] . '</p>
         <p>Jumah Kiloan : ' . $ctk['jumlah_kiloan'] . '</p>
+        <p>Catatan : ' . $ctk['catatan'] . '</p>
         <p>Total Harga : ' . $ctk['nominal'] . '</p>
         <hr>
         <p>Terima Kasih Telah Memakai Jasa Laundry Kami</p>

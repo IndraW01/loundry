@@ -39,14 +39,8 @@
       </li>
       <li class="nav-item">
         <a href="?page=transaksiLaundry" class="nav-link">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
-          <p>Transaksi Laundry</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="?page=keluar" class="nav-link">
           <i class="nav-icon fas fa-money-check-alt"></i>
-          <p>Transaksi Pengeluaran</p>
+          <p>Transaksi Laundry</p>
         </a>
       </li>
     <?php endif; ?>
@@ -74,6 +68,12 @@
         <a href="?page=saldo" class="nav-link">
           <i class="nav-icon fas fa-money-check-alt"></i>
           <p>Saldo</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="?page=riwayat" class="nav-link">
+          <i class="nav-icon fas fa-money-check-alt"></i>
+          <p>Riwayat Transaksi</p>
         </a>
       </li>
     <?php endif; ?>

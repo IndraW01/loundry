@@ -77,3 +77,9 @@ if ($page == 'saldo') {
     include 'page/saldo/pin.php';
   }
 }
+
+if ($page == 'riwayat') {
+  if ($aksi == '') {
+    include "page/riwayat/riwayat.php";
+  }
+}
